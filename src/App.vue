@@ -28,11 +28,12 @@ export default {
   name: "App",
 
   data: () => ({
+    obitelj: "Peikert",
     links: [
       "Početna",
-      "About Us",
-      "Otpad",
       "Usluge",
+      "Info",
+      "Zbrinjavanje otpada",
       "Prijava štete",
       "Kontaktirajte nas",
     ],
