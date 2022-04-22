@@ -1,32 +1,41 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view />
-  </div>
+  <v-app>
+    <v-main>
+      <v-footer color="primary lighten-1" padless>
+        <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
+          <strong>Apartman Blašković</strong> - {{ new Date().getFullYear() }}
+        </v-col>
+        <v-row justify="center" no-gutters>
+          <v-btn
+            v-for="link in links"
+            :key="link"
+            color="white"
+            text
+            rounded
+            class="my-2"
+          >
+            {{ link }}
+          </v-btn>
+        </v-row>
+      </v-footer>
+      <router-view />
+    </v-main>
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+export default {
+  name: "App",
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+  data: () => ({
+    links: [
+      "Početna",
+      "About Us",
+      "Otpad",
+      "Usluge",
+      "Prijava štete",
+      "Kontaktirajte nas",
+    ],
+  }),
+};
+</script>
