@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <v-carousel cycle>
+    <v-carousel>
       <v-carousel-item
         v-for="(item, i) in items"
         :key="i"
@@ -19,15 +19,51 @@
         </div>
       </v-carousel-item>
     </v-carousel>
-    <h1 class="text-8xl">SERVICES</h1>
+    <div class="mt-4">
+      <h1
+        class="md:text-7xl text-5xl text-center capitalize tracking-wider font-bold"
+      >
+        SERVICES
+      </h1>
+      <v-container class="grey lighten-5">
+        <v-row no-gutters>
+          <v-col class="mb-4">
+            <card-01
+              :image-src="'cards/wifi.png'"
+              :title="'Wi-fi'"
+              :subtitle="'Free Wi-fi network'"
+              :text="'Wi-fi network details: \n NAME: LUKA \n PASSWORD: lukadavorada64'"
+            ></card-01>
+          </v-col>
+          <v-col>
+            <card-01
+              :image-src="'cards/netflix.png'"
+              :title="'Netflix'"
+              :subtitle="'Free Netflix streaming service'"
+              :text="'Netflix streaming service info...'"
+            ></card-01>
+          </v-col>
+          <v-col>
+            <card-01
+              :image-src="'cards/air-conditioner.png'"
+              :title="'Air conditioners'"
+              :subtitle="'Air conditioner instructions'"
+              :text="'Air conditoiner info...'"
+            ></card-01>
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>
   </div>
 </template>
 <script>
+import card01 from "@/components/v-card.vue";
 export default {
   name: "Home-page",
-  components: {},
+  components: { card01 },
   data() {
     return {
+      alignments: ["start", "center", "end"],
       items: [
         {
           src: "carousel/cir231_1.jpg",
