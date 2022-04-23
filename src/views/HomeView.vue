@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="main">
     <v-carousel cycle>
       <v-carousel-item
         v-for="(item, i) in items"
@@ -9,7 +9,7 @@
         transition="fade-transition"
       >
         <div
-          class="flex justify-center items-center text-center md:text-6xl text-4xl"
+          class="flex justify-center items-center text-center md:text-6xl text-3xl"
         >
           <div
             class="mt-12 bg-gradient-to-r from-lime-500 text-zinc-50 font-bold rounded-lg shadow-lg p-4"
@@ -19,6 +19,7 @@
         </div>
       </v-carousel-item>
     </v-carousel>
+    <h1 class="text-8xl">SERVICES</h1>
   </div>
 </template>
 <script>

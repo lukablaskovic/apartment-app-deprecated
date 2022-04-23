@@ -1,139 +1,119 @@
-<template>
-  <v-card class="mx-auto overflow-hidden" height="400" width="344">
-    <v-system-bar color="deep-purple darken-3"></v-system-bar>
-
-    <v-app-bar color="deep-purple accent-4" dark prominent>
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-
-      <v-toolbar-title>My files</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-filter</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-dots-vertical</v-icon>
-      </v-btn>
-    </v-app-bar>
-
-    <v-navigation-drawer v-model="drawer" absolute bottom temporary>
-      <v-list nav dense>
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-list-item>
-            <v-list-item-title>Foo</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Bar</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Fizz</v-list-item-title>
-          </v-list-item>
-
-          <v-list-item>
-            <v-list-item-title>Buzz</v-list-item-title>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-card-text>
-      The navigation drawer will appear from the bottom on smaller size screens.
-    </v-card-text>
-  </v-card>
-</template>
-<!--
-<template>
+<template class="bg-indigo-100">
   <v-app>
+    <!--Header-->
     <nav>
       <v-main>
-        <v-app-bar color="primary " padless>
+        <v-app-bar
+          color="indigo darken-1
+ "
+          padless
+        >
           <v-app-bar-nav-icon
+            v-show="$vuetify.breakpoint.xs"
             @click.stop="drawer = !drawer"
           ></v-app-bar-nav-icon>
           <v-toolbar-side-icon></v-toolbar-side-icon>
           <v-row justify="left" no-gutters>
             <strong
-              class="lighten-2 py-4 text-center white--text ml-2 text-uppercase"
+              class="lighten-2 py-4 text-center white--text text-uppercase"
               >Welcome family {{ currentFamily }}!
             </strong>
           </v-row>
-          <v-row justify="center" no-gutters>
+          <v-row justify="center" no-gutters v-show="!$vuetify.breakpoint.xs">
             <v-btn
               v-for="link in links"
-              :key="link"
+              :key="link.title"
               color="white"
               text
               rounded
               class="my-4"
             >
-              {{ link }}
+              <v-icon
+                color="light-green lighten-1
+"
+                >{{ link.icon }}</v-icon
+              >
+              {{ link.title }}
             </v-btn>
           </v-row>
         </v-app-bar>
-        <v-navigation-drawer v-model="drawer" absolute bottom temporary>
-          <v-list nav dense>
-            <v-list-item-group
-              v-model="group"
-              active-class="deep-purple--text text--accent-4"
-            >
-              <v-list-item>
-                <v-list-item-title>Foo</v-list-item-title>
-              </v-list-item>
+        <v-navigation-drawer v-model="drawer" absolute temporary>
+          <v-list dense>
+            <v-list-item v-for="link in links" :key="link.title" link>
+              <v-list-item-icon>
+                <v-icon>{{ link.icon }}</v-icon>
+              </v-list-item-icon>
 
-              <v-list-item>
-                <v-list-item-title>Bar</v-list-item-title>
-              </v-list-item>
-
-              <v-list-item>
-                <v-list-item-title>Fizz</v-list-item-title>
-              </v-list-item>
-
-              <v-list-item>
-                <v-list-item-title>Buzz</v-list-item-title>
-              </v-list-item>
-            </v-list-item-group>
+              <v-list-item-content>
+                <v-list-item-title>{{ link.title }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
           </v-list>
         </v-navigation-drawer>
 
         <router-view />
       </v-main>
     </nav>
+    <!--Header-->
+    <!--Footer-->
+    <v-card height="400px">
+      <v-footer v-bind="localAttrs" :padless="padless">
+        <v-card flat tile width="100%" class="indigo darken-1 text-center">
+          <v-card-text>
+            <v-btn v-for="link in links" :key="link.title" class="mx-4" icon>
+              <v-icon size="24px" color="light-green lighten-1">
+                {{ link.icon }}
+              </v-icon>
+            </v-btn>
+          </v-card-text>
+
+          <v-divider></v-divider>
+
+          <v-card-text class="white--text">
+            {{ new Date().getFullYear() }} —
+            <strong>Apartment Blašković</strong>
+          </v-card-text>
+        </v-card>
+      </v-footer>
+    </v-card>
+    <!--/Footer-->
   </v-app>
 </template>
--->
 
 <script>
 export default {
   name: "App",
-  watch: {
-    group() {
-      this.drawer = false;
-    },
-  },
 
   data: () => ({
-    drawer: false,
-    group: null,
+    drawer: null,
     currentFamily: "Peikert",
     links: [
-      "HOME",
-      "SERVICES",
-      "INFO",
-      "WASTE DISPOSAL",
-      "DAMAGE REPORT",
-      "CONTACT US",
+      { title: "HOME", icon: "mdi-home-circle" },
+      { title: "SERVICES", icon: "mdi-view-dashboard" },
+      { title: "INFO", icon: "mdi-information" },
+      { title: "WASTE DISPOSAL", icon: "mdi-delete-empty" },
+      { title: "DAMAGE REPORT", icon: "mdi-alert" },
+      { title: "CONTACT US", icon: "mdi-card-account-phone" },
     ],
+    //For footer
+    items: ["default", "absolute", "fixed"],
+    padless: true,
+    variant: "fixed",
   }),
+
+  computed: {
+    //For Footer
+    localAttrs() {
+      const attrs = {};
+
+      if (this.variant === "default") {
+        attrs.absolute = false;
+        attrs.fixed = false;
+      } else {
+        attrs[this.variant] = true;
+      }
+      return attrs;
+    },
+  },
 };
 </script>
