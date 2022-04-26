@@ -43,20 +43,23 @@
             </v-btn>
           </v-row>
         </v-app-bar>
+        <!--Mobile navigation-->
         <v-navigation-drawer v-model="drawer" absolute temporary>
           <v-list dense>
             <v-list-item v-for="link in links" :key="link.title" link>
-              <v-list-item-icon>
-                <v-icon>{{ link.icon }}</v-icon>
-              </v-list-item-icon>
+              <v-btn @click="scroll(link.to)">
+                <v-list-item-icon>
+                  <v-icon>{{ link.icon }}</v-icon>
+                </v-list-item-icon>
 
-              <v-list-item-content>
-                <v-list-item-title>{{ link.title }}</v-list-item-title>
-              </v-list-item-content>
+                <v-list-item-content>
+                  <v-list-item-title>{{ link.title }}</v-list-item-title>
+                </v-list-item-content>
+              </v-btn>
             </v-list-item>
           </v-list>
         </v-navigation-drawer>
-
+        <!--/Mobile navigation-->
         <router-view />
       </v-main>
     </nav>
@@ -73,20 +76,26 @@
               icon
               @click="scroll(link.to)"
             >
-              <v-icon
-                :title="link.title"
-                size="24px"
-                color="light-green lighten-1"
-              >
-                {{ link.icon }}
-              </v-icon>
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-icon
+                    size="24px"
+                    color="light-green lighten-1"
+                    v-bind="attrs"
+                    v-on="on"
+                  >
+                    {{ link.icon }}
+                  </v-icon>
+                </template>
+                <span>{{ link.title }}</span>
+              </v-tooltip>
             </v-btn>
           </v-card-text>
 
           <v-divider></v-divider>
 
           <v-card-text class="white--text">
-            <strong>Apartment Blašković</strong> -
+            <strong>Apartment Blašković</strong> - Season
             {{ new Date().getFullYear() }}.
           </v-card-text>
         </v-card>
@@ -102,7 +111,7 @@ export default {
 
   data: () => ({
     drawer: null,
-    currentFamily: "Peikert",
+    currentFamily: "*family-name*",
     links: [
       { title: "Home", icon: "mdi-home-circle", to: "home" },
       { title: "Services", icon: "mdi-view-dashboard", to: "services" },
@@ -127,6 +136,7 @@ export default {
       document.getElementById(id).scrollIntoView({
         behavior: "smooth",
       });
+      this.drawer = false;
     },
   },
   computed: {

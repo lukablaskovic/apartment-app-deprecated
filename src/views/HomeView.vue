@@ -1,4 +1,5 @@
 <template>
+  <!--IDEJA: CHECK IN!-->
   <div class="main">
     <v-carousel>
       <v-carousel-item
@@ -31,7 +32,7 @@
             <card-01
               :image-src="'cards/wifi.png'"
               :title="'Wi-fi'"
-              :subtitle="'Free Wi-fi network'"
+              :subtitle="'Free Wi-Fi network'"
               :rawHTML="'<p>Feel free to connect to our Wi-fi network using the credentials bellow:<p><p><b>NAME:</b> LUKA</p><p> <b>PASSWORD:</b> lukadavorada64</p>'"
             ></card-01>
           </v-col>
@@ -54,6 +55,7 @@
         </v-row>
       </v-container>
     </div>
+    <!--BOAT EXCURSION-->
     <div id="boat-excursion" class="mt-4">
       <h1
         class="md:text-7xl text-5xl text-center capitalize tracking-wider font-bold"
@@ -61,12 +63,12 @@
         BOAT EXCURSION
       </h1>
       <v-container>
-        <v-row justify="center">
+        <v-row justify="center" align="center">
           <v-col>
             <card-02
-              :image-src="'cards/air-conditioner.png'"
-              :title="'Air conditioners'"
-              :subtitle="'Air conditioners information'"
+              :image-src="'cards/gliser1.jpg'"
+              :title="'FAMILY BOAT EXCURSION'"
+              :subtitle="'Boat excursion for whole family'"
               :rawHTML="'<p>There are two air conditioners in apartment. One in a living room and another in first bedroom.</p><p>Feel free to use them anytime, they have no limits or locks, but please use them responsibly.</p><p> Please turn them <b>OFF</b> when leaving the apartment or set up timers!</p>'"
             ></card-02>
           </v-col>
@@ -75,8 +77,7 @@
             <v-row>
               <v-col v-for="n in 6" :key="n" class="d-flex child-flex" cols="4">
                 <v-img
-                  :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                  :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                  :src="require('@/assets/boat/boat' + n + '.jpg')"
                   aspect-ratio="1"
                   class="grey lighten-2"
                 >
@@ -99,6 +100,14 @@
           <!--/SLIKE-->
         </v-row>
       </v-container>
+    </div>
+    <!--/BOAT EXCURSION-->
+    <div id="info" class="mt-4">
+      <h1
+        class="md:text-7xl text-5xl text-center capitalize tracking-wider font-bold"
+      >
+        INFO
+      </h1>
     </div>
   </div>
 </template>
