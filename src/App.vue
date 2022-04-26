@@ -4,12 +4,12 @@
     <nav>
       <v-main>
         <v-app-bar
-          color="indigo darken-1
+          color="blue darken-3
  "
           padless
         >
           <v-app-bar-nav-icon
-            v-show="$vuetify.breakpoint.xs"
+            v-show="$vuetify.breakpoint.mobile"
             @click.stop="drawer = !drawer"
           ></v-app-bar-nav-icon>
           <v-toolbar-side-icon></v-toolbar-side-icon>
@@ -19,7 +19,11 @@
               >Welcome family {{ currentFamily }}!
             </strong>
           </v-row>
-          <v-row justify="center" no-gutters v-show="!$vuetify.breakpoint.xs">
+          <v-row
+            justify="center"
+            no-gutters
+            v-show="!$vuetify.breakpoint.mobile"
+          >
             <v-btn
               v-for="link in links"
               :key="link.title"
@@ -27,9 +31,10 @@
               text
               rounded
               class="my-4"
+              @click="scroll(link.to)"
             >
               <v-icon
-                color="light-green 
+                color="light-green lighten-1
 "
                 class="mr-1"
                 >{{ link.icon }}</v-icon
@@ -59,10 +64,20 @@
     <!--Footer-->
     <v-card height="400px">
       <v-footer v-bind="localAttrs" :padless="padless">
-        <v-card flat tile width="100%" class="indigo darken-1 text-center">
+        <v-card flat tile width="100%" class="blue darken-3 text-center">
           <v-card-text>
-            <v-btn v-for="link in links" :key="link.title" class="mx-4" icon>
-              <v-icon size="24px" color="light-green">
+            <v-btn
+              v-for="link in links"
+              :key="link.title"
+              class="mx-4"
+              icon
+              @click="scroll(link.to)"
+            >
+              <v-icon
+                :title="link.title"
+                size="24px"
+                color="light-green lighten-1"
+              >
                 {{ link.icon }}
               </v-icon>
             </v-btn>
@@ -89,20 +104,31 @@ export default {
     drawer: null,
     currentFamily: "Peikert",
     links: [
-      { title: "HOME", icon: "mdi-home-circle" },
-      { title: "SERVICES", icon: "mdi-view-dashboard" },
-      { title: "BOAT EXCURSION", icon: "mdi-sail-boat" },
-      { title: "INFO", icon: "mdi-information" },
-      { title: "WASTE DISPOSAL", icon: "mdi-delete-empty" },
-      { title: "DAMAGE REPORT", icon: "mdi-alert" },
-      { title: "CONTACT US", icon: "mdi-card-account-phone" },
+      { title: "Home", icon: "mdi-home-circle", to: "home" },
+      { title: "Services", icon: "mdi-view-dashboard", to: "services" },
+      { title: "Boat excursion", icon: "mdi-sail-boat", to: "boat-excursion" },
+      { title: "Info", icon: "mdi-information", to: "info" },
+      {
+        title: "Waste disposal",
+        icon: "mdi-delete-empty",
+        to: "waste-disposal",
+      },
+      { title: "Damage report", icon: "mdi-alert", to: "damage-report" },
+      { title: "Contact us", icon: "mdi-card-account-phone", to: "contact-us" },
     ],
     //For footer
     items: ["default", "absolute", "fixed"],
     padless: true,
     variant: "fixed",
   }),
-
+  methods: {
+    scroll(id) {
+      if (id == null) return;
+      document.getElementById(id).scrollIntoView({
+        behavior: "smooth",
+      });
+    },
+  },
   computed: {
     //For Footer
     localAttrs() {

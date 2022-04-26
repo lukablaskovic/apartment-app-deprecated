@@ -1,2 +1,2 @@
 ICONS - light-green lighten-1
-MAIN, HEADER - indigo darken-1
+MAIN, HEADER - blue darken-3

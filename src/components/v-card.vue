@@ -7,7 +7,9 @@
     <v-card-subtitle> {{ subtitle }} </v-card-subtitle>
 
     <v-card-actions>
-      <v-btn color="light-green lighten-1" text> Details </v-btn>
+      <v-btn color="light-green lighten-1" @click="show = !show" text>
+        Details
+      </v-btn>
 
       <v-spacer></v-spacer>
 
@@ -19,17 +21,14 @@
     <v-expand-transition>
       <div v-show="show">
         <v-divider></v-divider>
-
-        <v-card-text>
-          {{ text }}
-        </v-card-text>
+        <v-card-text v-html="rawHTML"> </v-card-text>
       </div>
     </v-expand-transition>
   </v-card>
 </template>
 <script>
 export default {
-  props: ["title", "subtitle", "imageSrc", "text"],
+  props: ["title", "subtitle", "imageSrc", "rawHTML"],
   name: "card-01",
   data: () => ({
     show: false,
