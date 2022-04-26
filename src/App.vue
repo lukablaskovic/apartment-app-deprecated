@@ -29,8 +29,9 @@
               class="my-4"
             >
               <v-icon
-                color="light-green lighten-1
+                color="light-green 
 "
+                class="mr-1"
                 >{{ link.icon }}</v-icon
               >
               {{ link.title }}
@@ -61,7 +62,7 @@
         <v-card flat tile width="100%" class="indigo darken-1 text-center">
           <v-card-text>
             <v-btn v-for="link in links" :key="link.title" class="mx-4" icon>
-              <v-icon size="24px" color="light-green lighten-1">
+              <v-icon size="24px" color="light-green">
                 {{ link.icon }}
               </v-icon>
             </v-btn>
@@ -70,8 +71,8 @@
           <v-divider></v-divider>
 
           <v-card-text class="white--text">
-            {{ new Date().getFullYear() }} —
-            <strong>Apartment Blašković</strong>
+            <strong>Apartment Blašković</strong> -
+            {{ new Date().getFullYear() }}.
           </v-card-text>
         </v-card>
       </v-footer>
@@ -90,6 +91,7 @@ export default {
     links: [
       { title: "HOME", icon: "mdi-home-circle" },
       { title: "SERVICES", icon: "mdi-view-dashboard" },
+      { title: "BOAT EXCURSION", icon: "mdi-sail-boat" },
       { title: "INFO", icon: "mdi-information" },
       { title: "WASTE DISPOSAL", icon: "mdi-delete-empty" },
       { title: "DAMAGE REPORT", icon: "mdi-alert" },
