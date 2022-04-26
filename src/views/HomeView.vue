@@ -31,7 +31,7 @@
           <v-col class="mb-4">
             <card-01
               :image-src="'cards/wifi.png'"
-              :title="'Wi-fi'"
+              :title="'Wi-Fi'"
               :subtitle="'Free Wi-Fi network'"
               :rawHTML="'<p>Feel free to connect to our Wi-fi network using the credentials bellow:<p><p><b>NAME:</b> LUKA</p><p> <b>PASSWORD:</b> lukadavorada64</p>'"
             ></card-01>
@@ -41,7 +41,7 @@
               :image-src="'cards/netflix.png'"
               :title="'Netflix'"
               :subtitle="'Free Netflix streaming service'"
-              :rawHTML="'<p>We are offering you free Netflix streaming service whilst staying at our apartment. Please locate Netflix app on Smart TV and then choose <b>Guests</b> profile.</p> <p>Please keep in mind that you can use only <b>Guests</b> profile on one device at a time!</p> <p><b>PROFILE:</b> Guests</p> <p><b>PIN:</b> 1304</p>'"
+              :rawHTML="'<p>We are offering you free Netflix streaming service whilst staying at our apartment. You may locate Netflix app on Smart TV and then choose <b>Guests</b> profile.</p> <p>Please keep in mind that you can use only <b>Guests</b> profile on one device at a time!</p> <p><b>PROFILE:</b> Guests</p> <p><b>PIN:</b> 1304</p>'"
             ></card-01>
           </v-col>
           <v-col>
@@ -49,7 +49,7 @@
               :image-src="'cards/air-conditioner.png'"
               :title="'Air conditioners'"
               :subtitle="'Air conditioners information'"
-              :rawHTML="'<p>There are two air conditioners in apartment. One in a living room and another in first bedroom.</p><p>Feel free to use them anytime, they have no limits or locks, but please use them responsibly.</p><p> Please turn them <b>OFF</b> when leaving the apartment or set up timers!</p>'"
+              :rawHTML="'<p>There are two air conditioners in apartment. One in a living room and another in first bedroom.</p><p>Feel free to use them anytime, they have no limits or locks, but please use them responsibly.</p><p> Please turn them <b>OFF when leaving the apartment</b> or set up timers!</p>'"
             ></card-01>
           </v-col>
         </v-row>
