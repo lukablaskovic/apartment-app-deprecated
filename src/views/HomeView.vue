@@ -102,23 +102,95 @@
       </v-container>
     </div>
     <!--/BOAT EXCURSION-->
+
+    <!--INFO-->
     <div id="info" class="mt-4">
       <h1
-        class="md:text-7xl text-5xl text-center capitalize tracking-wider font-bold"
+        class="md:text-7xl text-5xl text-center capitalize tracking-wider font-bold mb-4"
       >
         INFO
       </h1>
+      <v-container>
+        <v-tabs v-model="tab" show-arrows grow class="mb-4">
+          <v-tabs-slider color="light-green lighten-1"></v-tabs-slider>
+          <v-tab v-for="tab in tabsItems" :key="tab.tab">
+            {{ tab.tab }}
+          </v-tab>
+        </v-tabs>
+        <v-tabs-items v-model="tab">
+          <v-tab-item v-for="tab in tabsItems" :key="tab.tab">
+            <!--Emergency-->
+            <div v-if="tab.content == 1">
+              <p>
+                We wish you peaceful and healthy holiday in Pula Croatia, but
+                emergency situations may occur unexpectedly.
+              </p>
+              <p>Below is the list of emergency and other useful numbers:</p>
+              <h2>General emergency number: <b>112</b></h2>
+              <h2>Police: <b>192</b></h2>
+              <h2>Ambulance: <b>194</b></h2>
+              <h2>Fire deparment: <b>193</b></h2>
+              <h2>Help on roads: <b>1987</b></h2>
+              <h2>Search and rescue at sea: <b>195</b></h2>
+              <h2>Child loss: <b>116 000</b></h2>
+              <h2>Doctor, Flanatička 27, Pula <b>+385 95 3256 003</b></h2>
+            </div>
+            <!--Hosts-->
+            <div v-if="tab.content == 2">
+              <v-row>
+                <profile-card
+                  :imageSrc="'hosts/davor.png'"
+                  :mob="'+385 92 181 4318'"
+                  :name="'Davor'"
+                ></profile-card>
+                <profile-card
+                  :imageSrc="'hosts/luka.png'"
+                  :mob="'+385 91 721 7631'"
+                  :name="'Luka'"
+                ></profile-card>
+              </v-row>
+            </div>
+            <!--FAQ-->
+            <div v-if="tab.content == 5">
+              <v-expansion-panels focusable>
+                <v-expansion-panel v-for="(item, i) in 5" :key="i">
+                  <v-expansion-panel-header
+                    >Question {{ i }}</v-expansion-panel-header
+                  >
+                  <v-expansion-panel-content>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+              </v-expansion-panels>
+            </div>
+          </v-tab-item>
+        </v-tabs-items>
+      </v-container>
     </div>
+    <!--/INFO-->
   </div>
 </template>
 <script>
 import card01 from "@/components/v-card.vue";
 import card02 from "@/components/v-card2.vue";
+import profileCard from "@/components/profile-card.vue";
+
 export default {
   name: "Home-page",
-  components: { card01, card02 },
+  components: { card01, card02, profileCard },
   data() {
     return {
+      tab: null,
+      tabsItems: [
+        { tab: "EMERGENCY", content: 1 },
+        { tab: "HOSTS", content: 2 },
+        { tab: "APARTMENT", content: 3 },
+        { tab: "LOCAL SERVICES", content: 4 },
+        { tab: "FAQ", content: 5 },
+      ],
       alignments: ["start", "center", "end"],
       items: [
         {
@@ -138,3 +210,4 @@ export default {
   },
 };
 </script>
+<style></style>
