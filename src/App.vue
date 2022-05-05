@@ -123,7 +123,6 @@ export default {
         to: "waste-disposal",
       },
       { title: "Damage report", icon: "mdi-alert", to: "damage-report" },
-      { title: "Contact us", icon: "mdi-card-account-phone", to: "contact-us" },
     ],
     //For footer
     items: ["default", "absolute", "fixed"],

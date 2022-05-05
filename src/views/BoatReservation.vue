@@ -8,15 +8,14 @@
     <h1 class="md:text-4xl text-3xl text-center tracking-wider font-bold">
       Up for a boat tour? Feel free to contact us and we can arrange it!
     </h1>
-    <h1>Dear guests!</h1>
+    <h1 class="mt-2">Dear guests!</h1>
     <h2>
       Over the last few years we have had great interest and positive feedback
       from our guests for a private boat tour.
     </h2>
     <h2>
       Check out what's included in tour from the list below. Feel free to choose
-      what you like, but you can also choose everything listed
-      <v-icon color="blue darken-3">mdi-emoticon-cool</v-icon>
+      what you like, but you can also choose everything listed :)
     </h2>
     <ul class="mt-4">
       <li>
@@ -112,7 +111,7 @@
                   v-model="select"
                   :items="items"
                   :error-messages="errors"
-                  label="Select"
+                  label="Number of people and price"
                   data-vv-name="select"
                   required
                 ></v-select>

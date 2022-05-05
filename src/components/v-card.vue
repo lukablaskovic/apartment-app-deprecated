@@ -1,6 +1,6 @@
 <template>
   <v-card class="mx-auto" max-width="344">
-    <v-img :src="require('@/assets/' + imageSrc)" height="200px"></v-img>
+    <v-img :src="require('@/assets/' + imageSrc)" :height="height"></v-img>
 
     <v-card-title> {{ title }} </v-card-title>
 
@@ -28,7 +28,7 @@
 </template>
 <script>
 export default {
-  props: ["title", "subtitle", "imageSrc", "rawHTML"],
+  props: ["title", "subtitle", "imageSrc", "rawHTML", "height"],
   name: "card-01",
   data: () => ({
     show: false,

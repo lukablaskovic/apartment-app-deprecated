@@ -36,7 +36,7 @@
               :rawHTML="'<p>Feel free to connect to our Wi-fi network using the credentials bellow:<p><p><b>NAME:</b> LUKA</p><p> <b>PASSWORD:</b> lukadavorada64</p>'"
             ></card-01>
           </v-col>
-          <v-col>
+          <v-col class="mb-4">
             <card-01
               :image-src="'cards/netflix.png'"
               :title="'Netflix'"
@@ -159,15 +159,12 @@
             <!--FAQ-->
             <div v-if="tab.content == 5">
               <v-expansion-panels focusable>
-                <v-expansion-panel v-for="(item, i) in 5" :key="i">
-                  <v-expansion-panel-header
-                    >Question {{ i }}</v-expansion-panel-header
-                  >
+                <v-expansion-panel v-for="question in faq" :key="question.id">
+                  <v-expansion-panel-header>{{
+                    question.question
+                  }}</v-expansion-panel-header>
                   <v-expansion-panel-content>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    {{ question.answer }}
                   </v-expansion-panel-content>
                 </v-expansion-panel>
               </v-expansion-panels>
@@ -184,26 +181,71 @@
       >
         WASTE DISPOSAL
       </h1>
-      <v-row>
-        <v-col> </v-col>
-        <v-col> </v-col>
-        <v-col> </v-col>
+      <v-row class="mb-2">
+        <v-col
+          ><card-01
+            :imageSrc="'kante/plava.jpg'"
+            :title="'Blue bin'"
+            :subtitle="'Paper and cardboard'"
+          >
+          </card-01>
+        </v-col>
+        <v-col
+          ><card-01
+            :imageSrc="'kante/zuta.jpg'"
+            :title="'Yellow bin'"
+            :subtitle="'Plastic and metal'"
+          >
+          </card-01>
+        </v-col>
+        <v-col
+          ><card-01
+            :imageSrc="'kante/zelena.jpg'"
+            :title="'Green bin'"
+            :subtitle="'Glass'"
+          >
+          </card-01>
+        </v-col>
       </v-row>
     </div>
     <!--/WASTE DISPOSAL-->
+    <!--DAMAGE REPORT-->
+    <div id="damage-report" class="mt-4 text-center">
+      <h1 class="md:text-7xl text-5xl capitalize tracking-wider font-bold mb-4">
+        DAMAGE REPORT
+      </h1>
+      <v-row justify="center" align="center">
+        <v-col>
+          <p>
+            Please upload the image showing damage and fill in the required
+            fields bellow and we will try to work out a solution.
+          </p>
+          <croppa
+            v-model="myCroppa"
+            :width="400"
+            :height="400"
+            :disable-rotation="true"
+            :prevent-white-space="true"
+          ></croppa>
+        </v-col>
+      </v-row>
+    </div>
+    <!--/DAMAGE REPORT-->
   </div>
 </template>
 <script>
 import card01 from "@/components/v-card.vue";
 import card02 from "@/components/v-card2.vue";
 import profileCard from "@/components/profile-card.vue";
-
+import faq from "@/faq";
 export default {
   name: "Home-page",
   components: { card01, card02, profileCard },
   data() {
     return {
+      myCroppa: {},
       tab: null,
+      faq: faq,
       tabsItems: [
         { tab: "EMERGENCY", content: 1 },
         { tab: "HOSTS", content: 2 },
@@ -228,6 +270,7 @@ export default {
       ],
     };
   },
+  methods: {},
 };
 </script>
 <style></style>
