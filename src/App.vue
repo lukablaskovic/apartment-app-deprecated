@@ -106,16 +106,16 @@
 </template>
 
 <script>
+import router from "@/router";
 export default {
   name: "App",
-
   data: () => ({
     drawer: null,
     currentFamily: "*family-name*",
     links: [
       { title: "Home", icon: "mdi-home-circle", to: "home" },
       { title: "Services", icon: "mdi-view-dashboard", to: "services" },
-      { title: "Boat excursion", icon: "mdi-sail-boat", to: "boat-excursion" },
+      { title: "Boat tour", icon: "mdi-sail-boat", to: "boat-tour" },
       { title: "Info", icon: "mdi-information", to: "info" },
       {
         title: "Waste disposal",
@@ -132,6 +132,8 @@ export default {
   }),
   methods: {
     scroll(id) {
+      if (this.$route.name != "home-page")
+        router.push({ path: "/", replace: true });
       if (id == null) return;
       document.getElementById(id).scrollIntoView({
         behavior: "smooth",

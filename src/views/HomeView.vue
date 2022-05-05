@@ -55,27 +55,33 @@
         </v-row>
       </v-container>
     </div>
-    <!--BOAT EXCURSION-->
-    <div id="boat-excursion" class="mt-4">
+
+    <!--BOAT TOUR-->
+    <div id="boat-tour" class="mt-4">
       <h1
         class="md:text-7xl text-5xl text-center capitalize tracking-wider font-bold"
       >
-        BOAT EXCURSION
+        BOAT TOUR
       </h1>
       <v-container>
         <v-row justify="center" align="center">
           <v-col>
             <card-02
               :image-src="'cards/gliser1.jpg'"
-              :title="'FAMILY BOAT EXCURSION'"
-              :subtitle="'Boat excursion for whole family'"
-              :rawHTML="'<p>There are two air conditioners in apartment. One in a living room and another in first bedroom.</p><p>Feel free to use them anytime, they have no limits or locks, but please use them responsibly.</p><p> Please turn them <b>OFF</b> when leaving the apartment or set up timers!</p>'"
+              :title="'FAMILY BOAT TOUR'"
+              :subtitle="'Boat tour for whole family'"
+              :buttonLink="'/boat-reservation'"
             ></card-02>
           </v-col>
           <!--SLIKE-->
           <v-col>
             <v-row>
-              <v-col v-for="n in 6" :key="n" class="d-flex child-flex" cols="4">
+              <v-col
+                v-for="n in 6"
+                :key="n"
+                class="d-flex child-flex"
+                :cols="$vuetify.breakpoint.mobile ? '6' : '4'"
+              >
                 <v-img
                   :src="require('@/assets/boat/boat' + n + '.jpg')"
                   aspect-ratio="1"
@@ -101,7 +107,7 @@
         </v-row>
       </v-container>
     </div>
-    <!--/BOAT EXCURSION-->
+    <!--/BOAT TOUR-->
 
     <!--INFO-->
     <div id="info" class="mt-4">
@@ -171,6 +177,20 @@
       </v-container>
     </div>
     <!--/INFO-->
+    <!--WASTE DISPOSAL-->
+    <div id="waste-disposal" class="mt-4">
+      <h1
+        class="md:text-7xl text-5xl text-center capitalize tracking-wider font-bold mb-4"
+      >
+        WASTE DISPOSAL
+      </h1>
+      <v-row>
+        <v-col> </v-col>
+        <v-col> </v-col>
+        <v-col> </v-col>
+      </v-row>
+    </div>
+    <!--/WASTE DISPOSAL-->
   </div>
 </template>
 <script>

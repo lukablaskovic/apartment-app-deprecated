@@ -9,24 +9,21 @@
     </v-img>
 
     <v-card-subtitle class="pb-0"> {{ subtitle }} </v-card-subtitle>
-    <!--
-    <v-card-text class="text--primary">
-      <div>Whitehaven Beach</div>
-
-      <div>Whitsunday Island, Whitsunday Islands</div>
-    </v-card-text>
-    -->
 
     <v-card-actions>
-      <v-btn color="light-green lighten-1" text> Make a reservation </v-btn>
-
-      <v-btn color="light-green lighten-1" text> Find out more </v-btn>
+      <v-btn
+        @click="$router.push(buttonLink)"
+        color="light-green lighten-1"
+        text
+      >
+        Find out more
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
 <script>
 export default {
-  props: ["title", "subtitle", "imageSrc", "rawHTML"],
+  props: ["title", "subtitle", "imageSrc", "rawHTML", "buttonLink"],
   name: "card-02",
   data: () => ({
     show: false,
