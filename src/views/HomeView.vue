@@ -196,6 +196,62 @@
                 </v-col>
               </v-row>
             </div>
+            <div v-if="tab.content == 4">
+              <v-container class="grey lighten-5">
+                <v-row no-gutters>
+                  <v-col class="mb-4">
+                    <card-01
+                      :image-src="'services/tivoli.jpg'"
+                      :title="'Pizzeria Tivoli'"
+                      :subtitle="'Veli vrh 8, 52100, Pula'"
+                      :rawHTML="'<p>`Food is our passion. We strive to offer a unique journey for all your senses. We use only the best ingredients to prepare pizza, pasta, salads and desserts.`</p><p><b>Address:</b> Veli vrh 8, 52100, Pula</p><p><b>Phone:</b> 052 508 000 (Delivery available)</p><p><b>Distance:</b> 5 min walk from apartment</p>'"
+                    ></card-01>
+                  </v-col>
+                  <v-col class="mb-4">
+                    <card-01
+                      :image-src="'services/ultra.jpg'"
+                      :title="'Grocery store Ultra'"
+                      :subtitle="'Braće Leonardelli 1, 52100, Pula'"
+                      :rawHTML="'<p>Open everyday from 7AM–9PM</p><p><b>Address:</b> Braće Leonardelli 1, 52100, Pula</p><p><b>Phone:</b> 052 753 819</p><p><b>Distance:</b> 5 min walk from apartment</p>'"
+                    ></card-01>
+                  </v-col>
+                  <v-col>
+                    <card-01
+                      :image-src="'services/ljekarna.jpg'"
+                      :title="'Pharmacy Veli Vrh'"
+                      :subtitle="'Braće Leonardelli 1, 52100, Pula'"
+                      :rawHTML="'<p>7AM–8PM Monday-Friday, 8AM-1PM Saturday, Sunday closed</p><p><b>Address:</b> Braće Leonardelli 1, 52100, Pula</p><p><b>Phone:</b> 052 223 657</p><p><b>Distance:</b> 5 min walk from apartment</p>'"
+                    ></card-01>
+                  </v-col>
+                </v-row>
+                <v-row no-gutters>
+                  <v-col class="mb-4">
+                    <card-01
+                      :image-src="'services/mons.jpg'"
+                      :title="'Barbecue restaurant Mons'"
+                      :subtitle="'Creska ul. 2, 52100, Pula'"
+                      :rawHTML="'<p>`Tasty grill is always in. Grilled dishes, salads, deserts`</p><p><b>Address:</b> Creska ul. 2, 52100, Pula</p><p><b>Phone:</b> 052 553 679</p><p><b>Distance:</b> 2 min walk from apartment</p>'"
+                    ></card-01>
+                  </v-col>
+                  <v-col class="mb-4">
+                    <card-01
+                      :image-src="'services/posta.jpg'"
+                      :title="'Post office Veli Vrh'"
+                      :subtitle="'Creska ul. 5, 52100, Pula'"
+                      :rawHTML="'<p>8–11AM, 11:30AM–3PM Monday-Saturday, Sunday closed</p><p><b>Address:</b> Creska ul. 5, 52100, Pula</p><p><b>Phone:</b> 052 553 679</p><p><b>Distance:</b> 1 min walk from apartment</p>'"
+                    ></card-01>
+                  </v-col>
+                  <v-col class="mb-4">
+                    <card-01
+                      :image-src="'services/shell.jpg'"
+                      :title="'Petrol station Shell BS Pula'"
+                      :subtitle="'Tršćanska ul. 44, 52100, Pula'"
+                      :rawHTML="'<p>6AM–12AM everyday</p><p><b>Address:</b> Tršćanska ul. 44, 52100, Pula</p><p><b>Phone:</b> 099 529 4436</p><p><b>Distance:</b> 5 min from apartment by car</p>'"
+                    ></card-01>
+                  </v-col>
+                </v-row>
+              </v-container>
+            </div>
             <!--FAQ-->
             <div v-if="tab.content == 5">
               <v-expansion-panels focusable>
