@@ -302,7 +302,7 @@
           ><card-03
             :imageSrc="'kante/zelena.jpg'"
             :title="'Green bin'"
-            :subtitle="'Glass'"
+            :subtitle="'Mixed'"
             :itemsAllowed="greenBinAllowed"
             :itemsNotAllowed="greenBinNotAllowed"
           >
@@ -434,26 +434,18 @@ export default {
       ],
       greenBinAllowed: [
         {
-          imgSrc: "kante/green/green1yes.png",
-          name: "glass bottles",
+          imgSrc: "kante/green/green1yes.jpg",
+          name: "cigarettes and tobacco products",
         },
         {
-          imgSrc: "kante/green/green2yes.png",
-          name: "glasses",
+          imgSrc: "kante/green/green2yes.jpeg",
+          name: "diapers",
         },
       ],
       greenBinNotAllowed: [
         {
           imgSrc: "kante/green/green1no.png",
-          name: "window, medical and car glass",
-        },
-        {
-          imgSrc: "kante/green/green2no.png",
-          name: "crystal, mirrors, porcelain, ceramics",
-        },
-        {
-          imgSrc: "kante/green/green3no.png",
-          name: "light bulbs, neon lamps",
+          name: "glass bottles (they go in separate bags)",
         },
       ],
     };
