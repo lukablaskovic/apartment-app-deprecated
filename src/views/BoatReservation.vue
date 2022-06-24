@@ -33,7 +33,7 @@
         local beaches and islands
       </li>
       <li>
-        <v-icon>mdi-checkbox-marked-circle</v-icon>4-5 hours tour duration
+        <v-icon>mdi-checkbox-marked-circle</v-icon>2-3 hours tour duration
       </li>
       <li>
         <v-icon>mdi-checkbox-marked-circle</v-icon>Departure time by agreement
@@ -101,7 +101,7 @@
                   required
                 ></v-text-field>
               </validation-provider>
-
+              <!--
               <validation-provider
                 v-slot="{ errors }"
                 name="select"
@@ -116,7 +116,7 @@
                   required
                 ></v-select>
               </validation-provider>
-
+-->
               <validation-provider
                 v-slot="{ errors }"
                 name="select"

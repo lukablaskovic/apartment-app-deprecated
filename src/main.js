@@ -5,7 +5,7 @@ import vuetify from "./plugins/vuetify";
 import "./assets/tailwind.css";
 
 Vue.config.productionTip = false;
-
+Vue.use(vuetify);
 new Vue({
   router,
   vuetify,

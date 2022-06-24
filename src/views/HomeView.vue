@@ -15,7 +15,7 @@
           <div
             class="mt-12 bg-gradient-to-r from-lime-600 text-zinc-50 font-bold rounded-lg shadow-lg p-4"
           >
-            Welcome to apartment Blašković!
+            Welcome to apartment Luka!
           </div>
         </div>
       </v-carousel-item>
@@ -131,7 +131,7 @@
                 We wish you peaceful and healthy holiday in Pula Croatia, but
                 emergency situations may occur unexpectedly.
               </p>
-              <p>Below is the list of emergency and other useful numbers:</p>
+              <p>Here's the list of emergency and other useful numbers:</p>
               <h2>General emergency number: <b>112</b></h2>
               <h2>Police: <b>192</b></h2>
               <h2>Ambulance: <b>194</b></h2>
@@ -183,28 +183,34 @@
       </h1>
       <v-row class="mb-2">
         <v-col
-          ><card-01
+          ><card-03
             :imageSrc="'kante/plava.jpg'"
             :title="'Blue bin'"
             :subtitle="'Paper and cardboard'"
+            :itemsAllowed="blueBinAllowed"
+            :itemsNotAllowed="blueBinNotAllowed"
           >
-          </card-01>
+          </card-03>
         </v-col>
         <v-col
-          ><card-01
+          ><card-03
             :imageSrc="'kante/zuta.jpg'"
             :title="'Yellow bin'"
             :subtitle="'Plastic and metal'"
+            :itemsAllowed="yellowBinAllowed"
+            :itemsNotAllowed="yellowBinNotAllowed"
           >
-          </card-01>
+          </card-03>
         </v-col>
         <v-col
-          ><card-01
+          ><card-03
             :imageSrc="'kante/zelena.jpg'"
             :title="'Green bin'"
             :subtitle="'Glass'"
+            :itemsAllowed="greenBinAllowed"
+            :itemsNotAllowed="greenBinNotAllowed"
           >
-          </card-01>
+          </card-03>
         </v-col>
       </v-row>
     </div>
@@ -236,11 +242,12 @@
 <script>
 import card01 from "@/components/v-card.vue";
 import card02 from "@/components/v-card2.vue";
+import card03 from "@/components/v-card3.vue";
 import profileCard from "@/components/profile-card.vue";
 import faq from "@/faq";
 export default {
   name: "Home-page",
-  components: { card01, card02, profileCard },
+  components: { card01, card02, card03, profileCard },
   data() {
     return {
       myCroppa: {},
@@ -266,6 +273,86 @@ export default {
         },
         {
           src: "carousel/cir231_4.jpg",
+        },
+      ],
+      blueBinAllowed: [
+        {
+          imgSrc: "kante/blue/blue1yes.jpg",
+          name: "plain paper and newspaper",
+        },
+        {
+          imgSrc: "kante/blue/blue2yes.jpg",
+          name: "paper and cardboard packaging",
+        },
+        {
+          imgSrc: "kante/blue/blue3yes.jpg",
+          name: "paper towel and napkins",
+        },
+      ],
+      blueBinNotAllowed: [
+        {
+          imgSrc: "kante/blue/blue1no.jpg",
+          name: "tetrapack packaging (milk, juice etc)",
+        },
+        {
+          imgSrc: "kante/blue/blue2no.jpg",
+          name: "plasticized or metallized paper",
+        },
+        {
+          imgSrc: "kante/blue/blue3no.jpg",
+          name: "photographs",
+        },
+      ],
+      yellowBinAllowed: [
+        {
+          imgSrc: "kante/yellow/yellow1yes.png",
+          name: "packaging detergent or shampoo",
+        },
+        {
+          imgSrc: "kante/yellow/yellow2yes.png",
+          name: "plastic food packaging products",
+        },
+        {
+          imgSrc: "kante/yellow/yellow3yes.png",
+          name: "cans, cans, metal lids",
+        },
+      ],
+      yellowBinNotAllowed: [
+        {
+          imgSrc: "kante/yellow/yellow1no.png",
+          name: "spray packaging",
+        },
+        {
+          imgSrc: "kante/yellow/yellow2no.png",
+          name: "plastic toys",
+        },
+        {
+          imgSrc: "kante/yellow/yellow3no.png",
+          name: "strong chemicals and paint",
+        },
+      ],
+      greenBinAllowed: [
+        {
+          imgSrc: "kante/green/green1yes.png",
+          name: "glass bottles",
+        },
+        {
+          imgSrc: "kante/green/green2yes.png",
+          name: "glasses",
+        },
+      ],
+      greenBinNotAllowed: [
+        {
+          imgSrc: "kante/green/green1no.png",
+          name: "window, medical and car glass",
+        },
+        {
+          imgSrc: "kante/green/green2no.png",
+          name: "crystal, mirrors, porcelain, ceramics",
+        },
+        {
+          imgSrc: "kante/green/green3no.png",
+          name: "light bulbs, neon lamps",
         },
       ],
     };

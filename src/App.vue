@@ -13,7 +13,7 @@
             @click.stop="drawer = !drawer"
           ></v-app-bar-nav-icon>
           <v-toolbar-side-icon></v-toolbar-side-icon>
-          <v-row justify="left" no-gutters>
+          <v-row justify="start" no-gutters>
             <strong
               class="lighten-2 py-4 text-center white--text text-uppercase"
               >Welcome family {{ currentFamily }}!
@@ -95,7 +95,7 @@
           <v-divider></v-divider>
 
           <v-card-text class="white--text">
-            <strong>Apartment Blašković</strong> - Season
+            <strong>Apartment Luka</strong> - Season
             {{ new Date().getFullYear() }}.
           </v-card-text>
         </v-card>
