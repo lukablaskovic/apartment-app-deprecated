@@ -11,3 +11,6 @@ new Vue({
   vuetify,
   render: (h) => h(App),
 }).$mount("#app");
+
+import { init } from "@emailjs/browser";
+init("FLvpTOReV5it6hjvX");

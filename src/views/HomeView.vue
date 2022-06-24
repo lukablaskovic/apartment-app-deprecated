@@ -30,6 +30,7 @@
         <v-row no-gutters>
           <v-col class="mb-4">
             <card-01
+              :QR="true"
               :image-src="'cards/wifi.png'"
               :title="'Wi-Fi'"
               :subtitle="'Free Wi-Fi network'"
@@ -49,7 +50,7 @@
               :image-src="'cards/air-conditioner.png'"
               :title="'Air conditioners'"
               :subtitle="'Air conditioners information'"
-              :rawHTML="'<p>There are two air conditioners in apartment. One in a living room and another in first bedroom.</p><p>Feel free to use them anytime, they have no limits or locks, but please use them responsibly.</p><p> Please turn them <b>OFF when leaving the apartment</b> or set up timers!</p>'"
+              :rawHTML="'<p>There are two air conditioners in apartment. One in the living room and another in the first bedroom.</p><p>Feel free to use them anytime, they have no limits or locks, but please use them responsibly.</p><p> Please turn them <b>OFF when leaving the apartment</b> or set up timers!</p>'"
             ></card-01>
           </v-col>
         </v-row>
@@ -154,6 +155,45 @@
                   :mob="'+385 91 721 7631'"
                   :name="'Luka'"
                 ></profile-card>
+              </v-row>
+            </div>
+            <!--Apartment-->
+            <div v-if="tab.content == 3">
+              <v-row align="center" justify="center" no-gutters>
+                <v-col class="d-flex child-flex">
+                  <v-img
+                    :src="require('@/assets/apartment/cookingOven.png')"
+                    contain
+                  ></v-img>
+                </v-col>
+                <v-col>
+                  <ol>
+                    <h1 class="md:text-5xl text-3xl">Cooking board</h1>
+                    <b>Steps:</b>
+                    <li>1. Turn off the locker if activated</li>
+                    <li>2. Turn ON the cooking board</li>
+                    <li>3. Select desired position</li>
+                    <li>4. Adjust the temperature</li>
+                  </ol>
+                </v-col>
+              </v-row>
+              <v-row align="center" justify="center" no-gutters>
+                <v-col class="d-flex child-flex">
+                  <v-img
+                    :src="require('@/assets/apartment/washingMachine.png')"
+                    contain
+                  ></v-img>
+                </v-col>
+                <v-col>
+                  <ol>
+                    <h1 class="md:text-5xl text-3xl">Washing machine</h1>
+                    <b>Steps:</b>
+                    <li>1. Insert detergent and fabric softener</li>
+                    <li>2. Turn ON the washing machine</li>
+                    <li>3. Select desired program (middle)</li>
+                    <li>4. Start the program</li>
+                  </ol>
+                </v-col>
               </v-row>
             </div>
             <!--FAQ-->

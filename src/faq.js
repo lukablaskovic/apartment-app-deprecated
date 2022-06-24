@@ -45,7 +45,7 @@ let faq = [
   {
     id: "8",
     question: "What is the check-out time?",
-    answer: "You must check out at 10:00 on the day of departure.",
+    answer: "At 10:00 on the departure day.",
   },
 ];
 export default faq;

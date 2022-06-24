@@ -19,7 +19,7 @@
     </h2>
     <ul class="mt-4">
       <li>
-        <v-icon>mdi-checkbox-marked-circle</v-icon>Navigation around
+        <v-icon>mdi-checkbox-marked-circle</v-icon>Navigation next to
         <a target="_blank" href="https://www.np-brijuni.hr/en"
           >Brijuni National Park</a
         >
@@ -30,7 +30,7 @@
       </li>
       <li>
         <v-icon>mdi-checkbox-marked-circle</v-icon>Swimming or sunbathing on
-        local beaches and islands
+        local beaches
       </li>
       <li>
         <v-icon>mdi-checkbox-marked-circle</v-icon>2-3 hours tour duration
@@ -71,16 +71,16 @@
       <p class="md:text-4xl text-3xl">Book the tour here</p>
       <v-container>
         <v-row justify="center">
-          <validation-observer ref="observer" v-slot="{ invalid }">
+          <validation-observer ref="observer" v-slot="{}">
             <form @submit.prevent="submit">
               <validation-provider
                 v-slot="{ errors }"
                 name="Name"
-                rules="required|max:12"
+                rules="required|max:16|min:3"
               >
                 <v-text-field
                   v-model="name"
-                  :counter="12"
+                  :counter="16"
                   :error-messages="errors"
                   label="Name"
                   required
@@ -89,9 +89,7 @@
               <validation-provider
                 v-slot="{ errors }"
                 name="phoneNumber"
-                :rules="{
-                  required: true,
-                }"
+                rules="required|min:7"
               >
                 <v-text-field
                   v-model="phoneNumber"
@@ -101,22 +99,8 @@
                   required
                 ></v-text-field>
               </validation-provider>
-              <!--
-              <validation-provider
-                v-slot="{ errors }"
-                name="select"
-                rules="required"
-              >
-                <v-select
-                  v-model="select"
-                  :items="items"
-                  :error-messages="errors"
-                  label="Number of people and price"
-                  data-vv-name="select"
-                  required
-                ></v-select>
-              </validation-provider>
--->
+
+              <h2 class="mb-4">Price: <b>70 EUR</b></h2>
               <validation-provider
                 v-slot="{ errors }"
                 name="select"
@@ -126,16 +110,12 @@
                   :error-messages="errors"
                   :min="minDate"
                   :max="maxDate"
-                  :items="items"
                   v-model="picker"
                   color="green lighten-1"
                 ></v-date-picker>
               </validation-provider>
 
-              <v-btn class="mr-4 ml-4" type="submit" :disabled="invalid">
-                book
-              </v-btn>
-              <v-btn @click="clear"> clear </v-btn>
+              <v-btn class="mr-4 ml-4" type="submit"> book </v-btn>
             </form>
           </validation-observer>
         </v-row>
@@ -148,7 +128,8 @@
 </template>
 
 <script>
-import { required, digits, max, regex } from "vee-validate/dist/rules";
+import { required, digits, max, min, regex } from "vee-validate/dist/rules";
+import emailjs from "@emailjs/browser";
 import {
   extend,
   ValidationObserver,
@@ -172,6 +153,11 @@ extend("max", {
   message: "{_field_} may not be greater than {length} characters",
 });
 
+extend("min", {
+  ...min,
+  message: "{_field_} may not be less than {length} characters",
+});
+
 extend("regex", {
   ...regex,
   message: "{_field_} {_value_} does not match {regex}",
@@ -186,16 +172,24 @@ export default {
   data: () => ({
     name: "",
     phoneNumber: "",
-    date: "",
     select: null,
-    items: ["2 people - 50€", "3-4 people - 80€", "5-6 people - 120€"],
-    minDate: "2022-05-05",
-    maxDate: "2022-05-12",
+    minDate: "2022-06-25",
+    maxDate: "2022-07-09",
+    picker: "",
   }),
 
   methods: {
-    submit() {
-      this.$refs.observer.validate();
+    async submit() {
+      const isValid = this.$refs.observer.validate();
+      console.log(isValid);
+      if (isValid) {
+        emailjs.send("service_shpe2hq", "template_wv0c2cr", {
+          from_name: this.name,
+          date: this.picker,
+          phone: this.phoneNumber,
+          msg: "Hello",
+        });
+      }
     },
     clear() {
       this.name = "";

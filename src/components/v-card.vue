@@ -22,13 +22,20 @@
       <div v-show="show">
         <v-divider></v-divider>
         <v-card-text v-html="rawHTML"> </v-card-text>
+        <v-img
+          v-if="QR == true"
+          class="text-center"
+          contain
+          :src="require('@/assets/wifi_qrcode.png')"
+          >You can scan the QR code instead</v-img
+        >
       </div>
     </v-expand-transition>
   </v-card>
 </template>
 <script>
 export default {
-  props: ["title", "subtitle", "imageSrc", "rawHTML", "height"],
+  props: ["title", "subtitle", "imageSrc", "rawHTML", "height", "QR"],
   name: "card-01",
   data: () => ({
     show: false,
