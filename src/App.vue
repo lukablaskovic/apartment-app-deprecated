@@ -16,7 +16,7 @@
           <v-row justify="start" no-gutters>
             <strong
               class="lighten-2 py-4 text-center white--text text-uppercase"
-              >Welcome family {{ currentFamily }}!
+              >Welcome family {{ store.currentFamily }}!
             </strong>
           </v-row>
           <v-row
@@ -107,11 +107,12 @@
 
 <script>
 import router from "@/router";
+import store from "@/store";
 export default {
   name: "App",
   data: () => ({
+    store,
     drawer: null,
-    currentFamily: "*family-name*",
     links: [
       { title: "Home", icon: "mdi-home-circle", to: "home" },
       { title: "Services", icon: "mdi-view-dashboard", to: "services" },
@@ -122,7 +123,7 @@ export default {
         icon: "mdi-delete-empty",
         to: "waste-disposal",
       },
-      { title: "Damage report", icon: "mdi-alert", to: "damage-report" },
+      //{ title: "Damage report", icon: "mdi-alert", to: "damage-report" },
     ],
     //For footer
     items: ["default", "absolute", "fixed"],

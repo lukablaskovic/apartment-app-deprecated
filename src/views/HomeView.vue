@@ -111,7 +111,7 @@
     <!--/BOAT TOUR-->
 
     <!--INFO-->
-    <div id="info" class="mt-4">
+    <div id="info" class="mt-4 text-center">
       <h1
         class="md:text-7xl text-5xl text-center capitalize tracking-wider font-bold mb-4"
       >
@@ -311,7 +311,9 @@
       </v-row>
     </div>
     <!--/WASTE DISPOSAL-->
+
     <!--DAMAGE REPORT-->
+    <!--
     <div id="damage-report" class="mt-4 text-center">
       <h1 class="md:text-7xl text-5xl capitalize tracking-wider font-bold mb-4">
         DAMAGE REPORT
@@ -332,6 +334,7 @@
         </v-col>
       </v-row>
     </div>
+    -->
     <!--/DAMAGE REPORT-->
   </div>
 </template>
@@ -340,6 +343,7 @@ import card01 from "@/components/v-card.vue";
 import card02 from "@/components/v-card2.vue";
 import card03 from "@/components/v-card3.vue";
 import profileCard from "@/components/profile-card.vue";
+import store from "@/store";
 import faq from "@/faq";
 export default {
   name: "Home-page",
@@ -347,6 +351,7 @@ export default {
   data() {
     return {
       myCroppa: {},
+      store,
       tab: null,
       faq: faq,
       tabsItems: [
