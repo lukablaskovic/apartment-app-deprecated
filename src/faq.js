@@ -8,7 +8,8 @@ let faq = [
   {
     id: "1",
     question: "Where can we park our car?",
-    answer: "You can park the car anywhere next to road in front of the house.",
+    answer:
+      "You can park the car anywhere next to the road in front of the house.",
   },
   {
     id: "2",

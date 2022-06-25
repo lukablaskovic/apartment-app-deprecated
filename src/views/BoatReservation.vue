@@ -33,6 +33,10 @@
         local beaches
       </li>
       <li>
+        <v-icon>mdi-checkbox-marked-circle</v-icon>Swimming or sunbathing on
+        Kozada Island
+      </li>
+      <li>
         <v-icon>mdi-checkbox-marked-circle</v-icon>2-3 hours tour duration
       </li>
       <li>
@@ -69,7 +73,7 @@
     <!--Rezervacija-->
     <div>
       <p class="md:text-4xl text-3xl">Book the tour here</p>
-      <v-container>
+      <v-container class="p-12">
         <v-row justify="center">
           <validation-observer ref="observer" v-slot="{}">
             <form @submit.prevent="submit">
@@ -99,6 +103,20 @@
                   required
                 ></v-text-field>
               </validation-provider>
+              <validation-provider
+                v-slot="{ errors }"
+                name="Comment"
+                rules="required|max:200"
+              >
+                <v-text-field
+                  v-model="comment"
+                  :counter="200"
+                  :error-messages="errors"
+                  label="Where would you like to go? (from the list above)"
+                  placeholder="Where would you like to go?"
+                  required
+                ></v-text-field>
+              </validation-provider>
 
               <h2 class="mb-4">Price: <b>70 EUR</b></h2>
               <validation-provider
@@ -115,12 +133,17 @@
                 ></v-date-picker>
               </validation-provider>
 
-              <v-btn class="mr-4 ml-4" type="submit"> book </v-btn>
+              <v-btn class="mr-4 ml-4 mt-2" type="submit"> book </v-btn>
             </form>
           </validation-observer>
         </v-row>
+        <p class="mt-4">
+          Or you can contact Davor directly and book via phone.
+        </p>
+        <v-alert class="mt-4" v-if="bookedSuccessful" type="success">
+          You have successfuly booked boat tour!
+        </v-alert>
       </v-container>
-      <p class="mt-4">Or you can contact Davor directly and book via phone.</p>
     </div>
 
     <!--Rezervacija-->
@@ -176,6 +199,8 @@ export default {
     minDate: "2022-06-25",
     maxDate: "2022-07-09",
     picker: "",
+    comment: "",
+    bookedSuccessful: false,
   }),
 
   methods: {
@@ -183,12 +208,13 @@ export default {
       const isValid = this.$refs.observer.validate();
       console.log(isValid);
       if (isValid) {
-        emailjs.send("service_shpe2hq", "template_wv0c2cr", {
+        await emailjs.send("service_shpe2hq", "template_wv0c2cr", {
           from_name: this.name,
           date: this.picker,
           phone: this.phoneNumber,
-          msg: "Hello",
+          msg: this.comment,
         });
+        this.bookedSuccessful = true;
       }
     },
     clear() {

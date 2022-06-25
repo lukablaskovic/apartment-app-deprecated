@@ -141,6 +141,24 @@
               <h2>Search and rescue at sea: <b>195</b></h2>
               <h2>Child loss: <b>116 000</b></h2>
               <h2>Doctor, Flanatička 27, Pula <b>+385 95 3256 003</b></h2>
+              <p class="text-2xl mt-4">COVID-19 latest updates for Croatia</p>
+              <ul>
+                <li>
+                  <b
+                    >- NO public wear of masks required (Only in health
+                    facilities)</b
+                  >
+                </li>
+                <li>
+                  <b>- NO COVID Certificate required</b>
+                </li>
+              </ul>
+              Get latest COVID-19 information for Croatia<a
+                href="https://www.koronavirus.hr/what-to-expect-in-croatia-important-information-for-visitors/624"
+                target="_blank"
+              >
+                here</a
+              >
             </div>
             <!--Hosts-->
             <div v-if="tab.content == 2">
@@ -445,7 +463,11 @@ export default {
       greenBinNotAllowed: [
         {
           imgSrc: "kante/green/green1no.png",
-          name: "glass bottles (they go in separate bags)",
+          name: "glass bottles (they go in separate green bags)",
+        },
+        {
+          imgSrc: "kante/green/green2no.jpg",
+          name: "green waste (they go in separate nylon bags)",
         },
       ],
     };
