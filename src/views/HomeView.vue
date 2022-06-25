@@ -193,9 +193,7 @@
                     <h1 class="mt-4 md:text-5xl text-3xl">
                       General information
                     </h1>
-                    <li>
-                      - Garden in front of apartment is included in reservation.
-                    </li>
+                    <li>- Garden in front of apartment is available to use.</li>
                     <li>- Please <b>do not</b> enter the farm underneath!</li>
                     <li>
                       - Since the garden is pretty big, hosts will maintain the
