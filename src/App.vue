@@ -72,7 +72,7 @@
             <v-btn
               v-for="link in links"
               :key="link.title"
-              class="mx-4"
+              class="mx-3"
               icon
               @click="scroll(link.to)"
             >
@@ -96,7 +96,7 @@
 
           <v-card-text class="white--text">
             <strong>Apartment Luka</strong> - Season
-            {{ new Date().getFullYear() }}.
+            {{ new Date().getFullYear() }}
           </v-card-text>
         </v-card>
       </v-footer>

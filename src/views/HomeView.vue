@@ -1,6 +1,6 @@
 <template>
   <!--IDEJA: CHECK IN!-->
-  <div class="main">
+  <div id="home" class="main">
     <v-carousel>
       <v-carousel-item
         v-for="(item, i) in items"
@@ -181,6 +181,34 @@
             </div>
             <!--Apartment-->
             <div v-if="tab.content == 3">
+              <v-row align="center" justify="center" no-gutters class="mb-4">
+                <v-col class="d-flex child-flex">
+                  <v-img
+                    :src="require('@/assets/apartment/tlocrt.png')"
+                    contain
+                  ></v-img>
+                </v-col>
+                <v-col>
+                  <ol>
+                    <h1 class="mt-4 md:text-5xl text-3xl">
+                      General information
+                    </h1>
+                    <li>
+                      - Garden in front of apartment is included in reservation.
+                    </li>
+                    <li>- Please <b>do not</b> enter the farm underneath!</li>
+                    <li>
+                      - Since the garden is pretty big, hosts will maintain the
+                      garden occasionally in early morning
+                    </li>
+                    <li>
+                      - The apartment itself consists of two bedrooms with two
+                      double beds, a bathroom, a large living room, a fully
+                      equipped kitchen and a veranda
+                    </li>
+                  </ol>
+                </v-col>
+              </v-row>
               <v-row align="center" justify="center" no-gutters>
                 <v-col class="d-flex child-flex">
                   <v-img
