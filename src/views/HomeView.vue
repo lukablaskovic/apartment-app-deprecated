@@ -136,11 +136,15 @@
               <h2>General emergency number: <b>112</b></h2>
               <h2>Police: <b>192</b></h2>
               <h2>Ambulance: <b>194</b></h2>
-              <h2>Fire deparment: <b>193</b></h2>
-              <h2>Help on roads: <b>1987</b></h2>
+              <h2>Fire brigade: <b>193</b></h2>
+              <h2>Help on roads (0-24h): <b>1987</b></h2>
+              <h2>General information: <b>11888</b></h2>
+              <h2>International information: <b>11802</b></h2>
               <h2>Search and rescue at sea: <b>195</b></h2>
               <h2>Child loss: <b>116 000</b></h2>
-              <h2>Doctor, Flanatička 27, Pula <b>+385 95 3256 003</b></h2>
+              <h2>
+                Medical centre, Flanatička 27, Pula <b>+385 95 3256 003</b>
+              </h2>
               <p class="text-2xl mt-4">COVID-19 latest updates for Croatia</p>
               <ul>
                 <li>

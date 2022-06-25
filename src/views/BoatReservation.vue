@@ -37,7 +37,7 @@
         Kozada Island
       </li>
       <li>
-        <v-icon>mdi-checkbox-marked-circle</v-icon>2-3 hours tour duration
+        <v-icon>mdi-checkbox-marked-circle</v-icon>3-4 hours tour duration
       </li>
       <li>
         <v-icon>mdi-checkbox-marked-circle</v-icon>Departure time by agreement
