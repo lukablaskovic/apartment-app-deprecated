@@ -3,7 +3,7 @@ let faq = [
     id: "0",
     question: "Can we use outside garden?",
     answer:
-      "Feel free to use outside garden in front of apartment where the table and swing are. However entrance in lower farm is not allowed.",
+      "Feel free to use outside garden in front of apartment where the table and swing are. However entrance in the farm underneath is not allowed.",
   },
   {
     id: "1",
@@ -36,7 +36,7 @@ let faq = [
   {
     id: "6",
     question: "Are there any shops or restaurants nearby?",
-    answer: "Yes, you can find it all in LOCAL SERVICES Info tab.",
+    answer: "Yes, you can find it all in LOCAL SERVICES tab.",
   },
   {
     id: "7",
@@ -47,6 +47,12 @@ let faq = [
     id: "8",
     question: "What is the check-out time?",
     answer: "At 10:00 on the departure day.",
+  },
+  {
+    id: "9",
+    question: "We damaged something in the apartment. What should we do?",
+    answer:
+      "Please contact us and we will see what we can do. Standard procedure includes filling up the Damage Form from Novasol. Novasol covers the costs of repairing and minor damage of up to 135 EUR.",
   },
 ];
 export default faq;
