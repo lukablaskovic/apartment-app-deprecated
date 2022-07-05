@@ -223,6 +223,11 @@
                     <li>3. Select desired position</li>
                     <li>4. Adjust the temperature</li>
                   </ol>
+                  <p>'H' indicates that cooking board position is still hot.</p>
+                  <p>
+                    Positions will turn on and off over time automatically
+                    because of temperature adjustments.
+                  </p>
                 </v-col>
               </v-row>
               <v-row align="center" justify="center" no-gutters>
@@ -241,6 +246,10 @@
                     <li>3. Select desired program (middle)</li>
                     <li>4. Start the program</li>
                   </ol>
+                  <p>
+                    Please <b>do not</b> try opening the doors while the machine
+                    is working or when the machine just finished working!
+                  </p>
                 </v-col>
               </v-row>
             </div>
