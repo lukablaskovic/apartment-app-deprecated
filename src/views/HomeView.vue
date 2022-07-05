@@ -48,9 +48,9 @@
           <v-col>
             <card-01
               :image-src="'cards/air-conditioner.png'"
-              :title="'Air conditioners'"
-              :subtitle="'Air conditioners information'"
-              :rawHTML="'<p>There are two air conditioners in apartment. One in the living room and another in the first bedroom.</p><p>Feel free to use them anytime, they have no limits or locks, but please use them responsibly.</p><p> Please turn them <b>OFF when leaving the apartment</b> or set up timers!</p>'"
+              :title="'House appliances'"
+              :subtitle="'House appliances information'"
+              :rawHTML="'<p>There are two air conditioners in the apartment. One in the living room and another in the first bedroom.</p><p> Please turn them <b>OFF when leaving the apartment</b> or set up timers!</p><p>A dishwasher, laundering machine and an oven are also available in the apartment.</p><p>Please use <b>3-4 appliances at once at max</b> since more will result in a power outage.</p>'"
             ></card-01>
           </v-col>
         </v-row>
@@ -489,15 +489,19 @@ export default {
           imgSrc: "kante/green/green2yes.jpeg",
           name: "diapers",
         },
+        {
+          imgSrc: "kante/green/green3yes.jpg",
+          name: "deodorant spray, hair spray, makeup",
+        },
       ],
       greenBinNotAllowed: [
         {
           imgSrc: "kante/green/green1no.png",
-          name: "glass bottles (they go in separate green bags)",
+          name: "glass bottles (put them in separate nylon bags)",
         },
         {
           imgSrc: "kante/green/green2no.jpg",
-          name: "green waste (they go in separate nylon bags)",
+          name: "green waste (put it in separate nylon bags)",
         },
       ],
     };

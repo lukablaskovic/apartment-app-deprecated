@@ -33,7 +33,7 @@
             max-width="344"
             :src="require('@/assets/' + item.imgSrc)"
           ></v-img>
-          {{ item.name }}
+          <span class="light-green--text"> {{ item.name }}</span>
         </v-card-text>
         <v-img
           class="mx-auto"
@@ -47,7 +47,7 @@
             max-width="344"
             :src="require('@/assets/' + item.imgSrc)"
           ></v-img>
-          {{ item.name }}
+          <span class="red--text"> {{ item.name }}</span>
         </v-card-text>
       </div>
     </v-expand-transition>

@@ -16,7 +16,7 @@
           <v-row justify="start" no-gutters>
             <strong
               class="lighten-2 py-4 text-center white--text text-uppercase"
-              >Welcome family {{ store.currentFamily }}!
+              >Welcome family {{ store.currentFamily }} ! &#128075;
             </strong>
           </v-row>
           <v-row
