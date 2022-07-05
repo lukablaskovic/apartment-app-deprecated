@@ -1,7 +1,7 @@
 let faq = [
   {
     id: "0",
-    question: "Can we use outside garden?",
+    question: "Can we use the outside garden?",
     answer:
       "Feel free to use outside garden in front of apartment where the table and swing are. However entrance in the farm underneath is not allowed.",
   },
@@ -53,6 +53,11 @@ let faq = [
     question: "We damaged something in the apartment. What should we do?",
     answer:
       "Please contact us and we will see what we can do. Standard procedure includes filling up the Damage Form from Novasol. Novasol covers the costs of repairing and minor damage of up to 135 EUR.",
+  },
+  {
+    id: "10",
+    question: "Can we invite our friends to the apartment?",
+    answer: "Feel free to, but please inform the hosts before.",
   },
 ];
 export default faq;
