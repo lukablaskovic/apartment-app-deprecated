@@ -181,23 +181,49 @@
             </div>
             <!--Apartment-->
             <div v-if="tab.content == 3">
-              <v-row align="center" justify="center" no-gutters class="mb-4">
-                <v-col class="d-flex child-flex">
+              <v-row
+                align="center"
+                justify="center"
+                no-gutters
+                class="mb-4 p-8"
+              >
+                <v-col :cols="$vuetify.breakpoint.mobile ? '6' : '4'">
+                  <v-img
+                    :src="require('@/assets/apartment/smoking.jpeg')"
+                    contain
+                    aspect-ratio="2"
+                  ></v-img>
+                </v-col>
+                <v-col>
+                  <h1 class="mt-4 md:text-5xl text-3xl">NO SMOKING</h1>
+
+                  Smoking is <b>not allowed</b> in the apartment! Feel free to
+                  smoke outside.
+                </v-col>
+              </v-row>
+              <v-divider></v-divider>
+              <v-row
+                align="center"
+                justify="center"
+                no-gutters
+                class="mb-4 p-8"
+              >
+                <v-col :cols="$vuetify.breakpoint.mobile ? '12' : '4'">
                   <v-img
                     :src="require('@/assets/apartment/tlocrt.png')"
                     contain
                   ></v-img>
                 </v-col>
-                <v-col>
+                <v-col :cols="$vuetify.breakpoint.mobile ? '12' : '4'">
                   <ol>
                     <h1 class="mt-4 md:text-5xl text-3xl">
-                      General information
+                      GENERAL INFORMATION
                     </h1>
                     <li>- Garden in front of apartment is available to use.</li>
                     <li>- Please <b>do not</b> enter the farm underneath!</li>
                     <li>
                       - Since the garden is pretty big, hosts will maintain the
-                      garden occasionally in early morning
+                      garden occasionally in the early morning
                     </li>
                     <li>
                       - The apartment itself consists of two bedrooms with two
@@ -207,16 +233,19 @@
                   </ol>
                 </v-col>
               </v-row>
-              <v-row align="center" justify="center" no-gutters>
-                <v-col class="d-flex child-flex">
+              <v-divider></v-divider>
+              <v-row align="center" justify="center" no-gutters class="p-8">
+                <v-col :cols="$vuetify.breakpoint.mobile ? '12' : '6'">
                   <v-img
                     :src="require('@/assets/apartment/cookingOven.png')"
                     contain
+                    max-height="450"
+                    max-width="900"
                   ></v-img>
                 </v-col>
-                <v-col>
+                <v-col :cols="$vuetify.breakpoint.mobile ? '12' : '4'">
                   <ol>
-                    <h1 class="md:text-5xl text-3xl">Cooking board</h1>
+                    <h1 class="md:text-5xl text-3xl">COOKING BOARD</h1>
                     <b>Steps:</b>
                     <li>1. Turn off the locker if activated</li>
                     <li>2. Turn ON the cooking board</li>
@@ -230,16 +259,17 @@
                   </p>
                 </v-col>
               </v-row>
-              <v-row align="center" justify="center" no-gutters>
-                <v-col class="d-flex child-flex">
+              <v-divider></v-divider>
+              <v-row align="center" justify="center" no-gutters class="p-8">
+                <v-col :cols="$vuetify.breakpoint.mobile ? '12' : '6'">
                   <v-img
                     :src="require('@/assets/apartment/washingMachine.png')"
                     contain
                   ></v-img>
                 </v-col>
-                <v-col>
+                <v-col :cols="$vuetify.breakpoint.mobile ? '12' : '4'">
                   <ol>
-                    <h1 class="md:text-5xl text-3xl">Washing machine</h1>
+                    <h1 class="md:text-5xl text-3xl">WASHING MACHINE</h1>
                     <b>Steps:</b>
                     <li>1. Insert detergent and fabric softener</li>
                     <li>2. Turn ON the washing machine</li>
@@ -252,6 +282,7 @@
                   </p>
                 </v-col>
               </v-row>
+              <v-divider></v-divider>
             </div>
             <div v-if="tab.content == 4">
               <v-container class="grey lighten-5">
