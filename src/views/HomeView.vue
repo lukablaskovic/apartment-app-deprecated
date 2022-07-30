@@ -543,7 +543,7 @@ export default {
         },
         {
           imgSrc: "kante/green/green2no.jpg",
-          name: "green waste (put it in separate nylon bags)",
+          name: "food and green waste (put it in separate nylon bags)",
         },
       ],
     };

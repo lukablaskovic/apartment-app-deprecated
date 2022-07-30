@@ -64,5 +64,10 @@ let faq = [
     question: "Can we invite our friends to the apartment?",
     answer: "Feel free to, but please inform the hosts before.",
   },
+  {
+    id: "12",
+    question: "Where do we throw food waste?",
+    answer: "Please put green and food waste in separate nylon bags.",
+  },
 ];
 export default faq;
