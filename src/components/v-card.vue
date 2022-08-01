@@ -1,11 +1,9 @@
 <template>
   <v-card class="mx-auto" max-width="344">
     <v-img :src="require('@/assets/' + imageSrc)" :height="height"></v-img>
+    <v-card-title class="justify-center"> {{ title }} </v-card-title>
 
-    <v-card-title> {{ title }} </v-card-title>
-
-    <v-card-subtitle> {{ subtitle }} </v-card-subtitle>
-
+    <v-card-subtitle class="text-center"> {{ subtitle }} </v-card-subtitle>
     <v-card-actions>
       <v-btn color="light-green lighten-1" @click="show = !show" text>
         Details

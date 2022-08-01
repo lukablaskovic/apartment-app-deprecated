@@ -19,6 +19,10 @@
     </h2>
     <ul class="mt-4">
       <li>
+        <v-icon>mdi-checkbox-marked-circle</v-icon>Tour is organized by your
+        host Davor
+      </li>
+      <li>
         <v-icon>mdi-checkbox-marked-circle</v-icon>Navigation next to
         <a target="_blank" href="https://www.np-brijuni.hr/en"
           >Brijuni National Park</a
@@ -196,8 +200,8 @@ export default {
     name: "",
     phoneNumber: "",
     select: null,
-    minDate: "2022-07-09",
-    maxDate: "2022-07-29",
+    minDate: "2022-08-01",
+    maxDate: "2022-08-12",
     picker: "",
     comment: "",
     bookedSuccessful: false,

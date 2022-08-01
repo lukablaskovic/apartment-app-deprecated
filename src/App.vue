@@ -4,7 +4,7 @@
     <nav>
       <v-main>
         <v-app-bar
-          color="blue darken-3
+          color="blue darken-4
  "
           padless
         >
@@ -67,7 +67,7 @@
     <!--Footer-->
     <v-card height="400px">
       <v-footer v-bind="localAttrs" :padless="padless">
-        <v-card flat tile width="100%" class="blue darken-3 text-center">
+        <v-card flat tile width="100%" class="blue darken-4 text-center">
           <v-card-text>
             <v-btn
               v-for="link in links"

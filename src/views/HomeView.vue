@@ -27,8 +27,8 @@
         SERVICES
       </h1>
       <v-container class="grey lighten-5">
-        <v-row no-gutters>
-          <v-col class="mb-4">
+        <v-row no-gutters justify="center">
+          <v-col class="mb-4" :cols="$vuetify.breakpoint.mobile ? '12' : '4'">
             <card-01
               :QR="true"
               :image-src="'cards/wifi.png'"
@@ -47,7 +47,7 @@
             ></card-01>
           </v-col>
           -->
-          <v-col>
+          <v-col :cols="$vuetify.breakpoint.mobile ? '12' : '4'">
             <card-01
               :image-src="'cards/air-conditioner.png'"
               :title="'House appliances'"
@@ -224,8 +224,8 @@
                     <li>- Garden in front of apartment is available to use.</li>
                     <li>- Please <b>do not</b> enter the farm underneath!</li>
                     <li>
-                      - Since the garden is pretty big, hosts will maintain the
-                      garden occasionally in the early morning
+                      - Since the garden is pretty big, hosts will occasionally
+                      maintain and water the garden in the early morning
                     </li>
                     <li>
                       - The apartment itself consists of two bedrooms with two
@@ -349,7 +349,7 @@
                   <v-expansion-panel-header>{{
                     question.question
                   }}</v-expansion-panel-header>
-                  <v-expansion-panel-content>
+                  <v-expansion-panel-content class="float-left">
                     {{ question.answer }}
                   </v-expansion-panel-content>
                 </v-expansion-panel>
