@@ -25,7 +25,8 @@ let faq = [
   {
     id: "4",
     question: "Which TV channels are available?",
-    answer: "Satellite offers plenty of Croatian and foreign channels.",
+    answer:
+      "Satellite offers plenty of Croatian and foreign channels. Also feel free to use Netflix and Youtube!",
   },
   {
     id: "5",
