@@ -37,7 +37,7 @@
               :rawHTML="'<p>Feel free to connect to our Wi-fi network using the credentials bellow:<p><p><b>NAME:</b> LUKA</p><p> <b>PASSWORD:</b> lukadavorada64</p>'"
             ></card-01>
           </v-col>
-
+          <!--
           <v-col class="mb-4">
             <card-01
               :image-src="'cards/netflix.png'"
@@ -46,7 +46,7 @@
               :rawHTML="'<p>We are offering you free Netflix streaming service whilst staying at our apartment. You may locate Netflix app on Smart TV and then choose <b>Guests</b> profile.</p> <p>Please keep in mind that you can use only <b>Guests</b> profile on one device at a time!</p> <p><b>PROFILE:</b> Guests</p> <p><b>PIN:</b> 2217</p>'"
             ></card-01>
           </v-col>
-
+-->
           <v-col :cols="$vuetify.breakpoint.mobile ? '12' : '4'">
             <card-01
               :image-src="'cards/air-conditioner.png'"
