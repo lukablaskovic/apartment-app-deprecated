@@ -1,8 +1,7 @@
 <template>
   <div class="text-center">
     <h1
-      class="md:text-7xl text-5xl text-center capitalize tracking-wider font-bold mt-2"
-    >
+      class="md:text-7xl text-5xl text-center capitalize tracking-wider font-bold mt-2">
       BOAT TOUR
     </h1>
     <h1 class="md:text-4xl text-3xl text-center tracking-wider font-bold">
@@ -54,19 +53,16 @@
           v-for="n in 8"
           :key="n"
           class="d-flex child-flex"
-          :cols="$vuetify.breakpoint.mobile ? '6' : '3'"
-        >
+          :cols="$vuetify.breakpoint.mobile ? '6' : '3'">
           <v-img
             :src="require('@/assets/boat/boat' + n + '.jpg')"
             aspect-ratio="1"
-            class="grey lighten-2"
-          >
+            class="grey lighten-2">
             <template v-slot:placeholder>
               <v-row class="fill-height ma-0" align="center" justify="center">
                 <v-progress-circular
                   indeterminate
-                  color="grey lighten-5"
-                ></v-progress-circular>
+                  color="grey lighten-5"></v-progress-circular>
               </v-row>
             </template>
           </v-img>
@@ -84,57 +80,49 @@
               <validation-provider
                 v-slot="{ errors }"
                 name="Name"
-                rules="required|max:16|min:3"
-              >
+                rules="required|max:16|min:3">
                 <v-text-field
                   v-model="name"
                   :counter="16"
                   :error-messages="errors"
                   label="Name"
-                  required
-                ></v-text-field>
+                  required></v-text-field>
               </validation-provider>
               <validation-provider
                 v-slot="{ errors }"
                 name="phoneNumber"
-                rules="required|min:7"
-              >
+                rules="required|min:7">
                 <v-text-field
                   v-model="phoneNumber"
                   :counter="16"
                   :error-messages="errors"
                   label="Phone Number"
-                  required
-                ></v-text-field>
+                  required></v-text-field>
               </validation-provider>
               <validation-provider
                 v-slot="{ errors }"
                 name="Comment"
-                rules="required|max:200"
-              >
+                rules="required|max:200">
                 <v-text-field
                   v-model="comment"
                   :counter="200"
                   :error-messages="errors"
                   label="Where would you like to go? (from the list above)"
                   placeholder="Where would you like to go?"
-                  required
-                ></v-text-field>
+                  required></v-text-field>
               </validation-provider>
 
               <h2 class="mb-4">Price: <b>70 EUR</b></h2>
               <validation-provider
                 v-slot="{ errors }"
                 name="select"
-                rules="required"
-              >
+                rules="required">
                 <v-date-picker
                   :error-messages="errors"
                   :min="minDate"
                   :max="maxDate"
                   v-model="picker"
-                  color="green lighten-1"
-                ></v-date-picker>
+                  color="green lighten-1"></v-date-picker>
               </validation-provider>
 
               <v-btn class="mr-4 ml-4 mt-2" type="submit"> book </v-btn>
@@ -200,8 +188,8 @@ export default {
     name: "",
     phoneNumber: "",
     select: null,
-    minDate: "2022-08-21",
-    maxDate: "2022-09-02",
+    minDate: "2022-09-04",
+    maxDate: "2022-09-09",
     picker: "",
     comment: "",
     bookedSuccessful: false,
