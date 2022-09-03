@@ -1,3 +1,3 @@
 export default {
-  currentFamily: "Rückert",
+  currentFamily: "Schrödl",
 };
